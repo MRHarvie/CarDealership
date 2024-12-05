@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const CustomerSchema = mongoose.Schema({
+const CustomerSchema = new mongoose.Schema({
     firstName: {
         type: String,
         required: [true, "Please enter customer's first name"]
@@ -32,5 +32,4 @@ const CustomerSchema = mongoose.Schema({
     timestamps: true
 });
 
-const Customer = mongoose.model('Customer', CustomerSchema);
-module.exports = Customer;
+module.exports = mongoose.models.Customer || mongoose.model('Customer', CustomerSchema);

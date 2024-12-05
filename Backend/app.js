@@ -1,11 +1,12 @@
-const carRoute = require("./routes/car.routes.js");
-const customerRoute = require("./routes/customer.routes.js");
-const transactionRoute = require("./routes/transaction.routes.js");
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
+const carRoute = require('./routes/car.routes');
+const customerRoute = require('./routes/customer.routes');
+const transactionRoute = require('./routes/transaction.routes');
+
 const app = express();
 const port = 3000;
-const mongoose = require('mongoose');
 
 // Middleware
 app.use(cors());
@@ -17,7 +18,6 @@ app.use("/api/customers", customerRoute);
 app.use("/api/transactions", transactionRoute);
 
 // MongoDB Connection
-// Replace with your actual MongoDB connection details
 mongoose.connect('mongodb://Student03:Student03@logan', {
     dbName: 'home03'
 })

@@ -18,13 +18,13 @@ carRouter.get('/id=:id', getCar);
 // Get car by VIN
 carRouter.get('/vin=:vin', getCarByVIN);
 
-// Create new car
+// Create a new car
 carRouter.post('/', createCar);
 
-// Update car by ID
+// Update a car
 carRouter.put('/id=:id', updateCar);
 
-// Delete car by ID
+// Delete a car
 carRouter.delete('/id=:id', deleteCar);
 
 module.exports = carRouter;

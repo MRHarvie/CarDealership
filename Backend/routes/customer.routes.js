@@ -3,8 +3,6 @@ const customerRouter = express.Router();
 const {
     getCustomers,
     getCustomer,
-    getCustomerByEmail,
-    getCustomerByLicense,
     createCustomer,
     updateCustomer,
     deleteCustomer
@@ -16,19 +14,13 @@ customerRouter.get('/', getCustomers);
 // Get customer by MongoDB ID
 customerRouter.get('/id=:id', getCustomer);
 
-// Get customer by email
-customerRouter.get('/email=:email', getCustomerByEmail);
+// Create a new customer
+customerRouter.post('/', createCustomer);
 
-// Get customer by license number
-customerRouter.get('/license=:licenseNumber', getCustomerByLicense);
-
-// Create new customer
-customerRouter.get('/', createCustomer);
-
-// Update customer by ID
+// Update a customer
 customerRouter.put('/id=:id', updateCustomer);
 
-// Delete customer by ID
+// Delete a customer
 customerRouter.delete('/id=:id', deleteCustomer);
 
 module.exports = customerRouter;

@@ -3,8 +3,6 @@ const transactionRouter = express.Router();
 const {
     getTransactions,
     getTransaction,
-    getTransactionsByCustomer,
-    getTransactionsByCar,
     createTransaction,
     updateTransaction,
     deleteTransaction
@@ -16,19 +14,13 @@ transactionRouter.get('/', getTransactions);
 // Get transaction by MongoDB ID
 transactionRouter.get('/id=:id', getTransaction);
 
-// Get transactions by customer ID
-transactionRouter.get('/customer=:customerId', getTransactionsByCustomer);
-
-// Get transactions by car ID
-transactionRouter.get('/car=:carId', getTransactionsByCar);
-
-// Create new transaction
+// Create a new transaction
 transactionRouter.post('/', createTransaction);
 
-// Update transaction by ID
+// Update a transaction
 transactionRouter.put('/id=:id', updateTransaction);
 
-// Delete transaction by ID
+// Delete a transaction
 transactionRouter.delete('/id=:id', deleteTransaction);
 
 module.exports = transactionRouter;
